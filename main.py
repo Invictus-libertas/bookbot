@@ -5,6 +5,8 @@ def main():
         print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
 
+    book = sys.argv[1]
+
     from stats import word_count
     from stats import character_count
     from stats import presentation
