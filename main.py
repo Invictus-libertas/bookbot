@@ -1,16 +1,23 @@
 def main():
-#    book_as_string = get_book_text("frankenstein")
+    import sys
+
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
     from stats import word_count
-    count = word_count("frankenstein")
     from stats import character_count
     from stats import presentation
-    print("============ BOOKBOT ============ \n" \
-    "Analyzing book found at books/frankenstein.txt...")
-#    print(character_count("frankenstein"))
-    print("----------- Word Count ---------- \n" \
-    f"Found {count} total words")
-    print("--------- Character Count -------")
-    for item in presentation(character_count("frankenstein")):
+
+    count = word_count(f"{book}")
+
+    print(f"""============ BOOKBOT ============
+    Analyzing book found at books/{book}.txt...
+    ----------- Word Count ----------
+    Found {count} total words
+    --------- Character Count -------""")
+
+    for item in presentation(character_count(f"{book}")):
         if item["char"].isalpha():
             print(f"{item["char"]}: {item["count"]}")
     print("============= END ===============")
