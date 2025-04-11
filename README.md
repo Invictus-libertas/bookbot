@@ -1,2 +1,2 @@
 # bookbot
-Simple project to read large text files (books) and return the count of letters within.
+BookBot is my first [Boot.dev](https://www.boot.dev) project!
