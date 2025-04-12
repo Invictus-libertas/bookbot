@@ -1,5 +1,5 @@
 def get_book_text(title):
-    with open(f"./books/{title}.txt") as book:
+    with open(title) as book:
         return book.read()
 
 def word_count(title):
@@ -24,7 +24,7 @@ def presentation(char_dict):
     for char, count in char_dict.items():
         char_list.append({"char": char, "count": count})
     char_list.sort(reverse=True, key=sort_on)
-    
+
     return char_list
 
     
